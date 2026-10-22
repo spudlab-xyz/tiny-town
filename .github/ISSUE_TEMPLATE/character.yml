@@ -1,0 +1,57 @@
+name: Character proposal
+description: Propose a new resident or a change to an existing character
+title: "[Character]: "
+labels:
+  - proposal:character
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for introducing someone to Tiny Town. Submissions are untrusted proposals for maintainer review; they never merge or deploy automatically. Do not include secrets, private data, or security vulnerabilities.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched open and closed issues and did not find a duplicate proposal.
+          required: true
+        - label: This character is fictional and does not expose or imitate a real person's private information.
+          required: true
+        - label: I understand that popularity informs review but does not decide whether this proposal is accepted.
+          required: true
+  - type: input
+    id: name
+    attributes:
+      label: Character name
+      placeholder: Mina Moss
+    validations:
+      required: true
+  - type: textarea
+    id: role
+    attributes:
+      label: Role and town fit
+      description: Who are they, what do they contribute, and how do they connect to the town?
+    validations:
+      required: true
+  - type: textarea
+    id: portrayal
+    attributes:
+      label: Portrayal
+      description: Describe their personality, appearance, pronouns if relevant, and a short sample introduction. Avoid stereotypes or demeaning traits.
+    validations:
+      required: true
+  - type: textarea
+    id: interactions
+    attributes:
+      label: Places and interactions
+      description: Where might visitors find them, and what accessible text or interaction changes would be needed?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and dependencies
+      description: List required art, copy, data, or changes to existing content. Include a smaller version if possible.
+    validations:
+      required: true

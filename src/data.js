@@ -1,0 +1,19 @@
+export const town={
+buildings:[
+{id:"signpost",name:"The Signpost",icon:"↟",x:12,y:18,color:"#B9573F",description:"The town’s starting point, where paths and proposals meet.",purpose:"Orient visitors and point toward the reviewed proposal route.",history:"The first landmark in Tiny Town; its arrows have never quite agreed which way is forward.",residentIds:["mara"],detail:"Use it to orient yourself and find the route for proposing something new."},
+{id:"archive",name:"Small Hours Archive",icon:"▥",x:61,y:13,color:"#72566F",description:"The record of what changed, and why.",purpose:"Keep maps, field notes, and careful accounts of town revisions.",history:"No history recorded yet.",residentIds:["oren"],detail:"The Archive makes room for working routes and ideas that changed."},
+{id:"workshop",name:"Patchwork Works",icon:"⚒",x:72,y:53,color:"#B9573F",description:"A practical workshop for ideas that need testing.",purpose:"Test rough notions before anyone calls them finished.",history:"No history recorded yet.",residentIds:["kit"],detail:"Plans are pinned up, prototypes are tried, and nothing is called finished before it works."},
+{id:"garden",name:"The Long Table",icon:"♧",x:38,y:62,color:"#47704E",description:"A garden and shared table for slower conversations.",purpose:"Give questions more daylight, viewpoints, and somewhere to set down a mug.",history:"No history recorded yet.",residentIds:["iona"],detail:"Residents bring questions here when they need more time and another chair."},
+{id:"lookout",name:"Weatherstep",icon:"⌁",x:8,y:61,color:"#3F6F7C",description:"A hilltop lookout for seeing the whole town at once.",purpose:"Take stock of the town without promising everything on the horizon.",history:"No history recorded yet.",residentIds:["tavi"],detail:"From Weatherstep, footpaths become patterns and empty plots become possibilities—not promises."}],
+residents:[
+{id:"mara",name:"Mara Venn",pronouns:"she/her",role:"Sign painter",avatar:"MV",bio:"Believes a useful sign tells you where you are before it tells you where to go."},
+{id:"oren",name:"Oren Vale",pronouns:"he/him",role:"Archivist",avatar:"OV",bio:"Records decisions without sanding off the uncertainty."},
+{id:"kit",name:"Kit Bramble",pronouns:"they/them",role:"Workshop keeper",avatar:"KB",bio:"Asks what an idea is for, who can use it, and what happens when it breaks."},
+{id:"iona",name:"Iona Peat",pronouns:"she/her",role:"Gardener and host",avatar:"IP",bio:"Patient with seedlings and impatient with vague invitations."},
+{id:"tavi",name:"Tavi Rook",pronouns:"she/her",role:"Lookout",avatar:"TR",bio:"Will not call a new roof complete until someone has checked the door."}],
+notices:[
+{id:"stool-audit",title:"Stool audit",date:"2026-10-22",seeded:true,body:"The Square has seven stools and eight opinions about where they belong. Mara requests one measuring tape."},
+{id:"hinges",title:"Hinges wanted",date:"2026-10-22",seeded:true,body:"Patchwork Works needs two quiet hinges. Squeaky hinges may submit a compelling explanation."},
+{id:"open-plot",title:"Open plot",date:"2026-10-22",seeded:true,body:"The plot east of the garden has no assigned use. Explore first, then propose what would make the map more useful or delightful."},
+{id:"lost-umbrella",title:"Lost: one extremely patient umbrella",date:"2026-10-22",seeded:true,residentId:"mara",body:"Please return the moss-green umbrella last seen waiting outside the bakery. — Mara Venn",sourceUrl:"https://github.com/spudlab-xyz/tiny-town/issues/2"}],history:[]};
+export function indexTown(data=town){return{residents:new Map(data.residents.map(r=>[r.id,r])),buildings:new Map(data.buildings.map(b=>[b.id,b]))};}
