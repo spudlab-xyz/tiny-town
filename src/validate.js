@@ -31,6 +31,15 @@ export function validateTown(data) {
     if (notice.residentId !== undefined && !residentIds.has(notice.residentId)) errors.push(`${path} references unknown resident ${notice.residentId}`);
     if (notice.sourceUrl !== undefined && (typeof notice.sourceUrl !== "string" || !notice.sourceUrl.startsWith("https://"))) errors.push(`${path}.sourceUrl must be an https URL`);
   });
-  data.history.forEach((entry, index) => requiredStrings(entry, ["version", "date", "title", "summary"], `history[${index}]`, errors));
+  data.history.forEach((entry, index) => {
+    const path = `history[${index}]`;
+    requiredStrings(entry, ["version", "date", "title", "summary"], path, errors);
+    if (!Array.isArray(entry.links) || !entry.links.length) errors.push(`${path}.links must not be empty`);
+    else entry.links.forEach((link, linkIndex) => {
+      const linkPath = `${path}.links[${linkIndex}]`;
+      requiredStrings(link, ["label", "url"], linkPath, errors);
+      if (typeof link.url === "string" && !link.url.startsWith("https://")) errors.push(`${linkPath}.url must be an https URL`);
+    });
+  });
   return errors;
 }

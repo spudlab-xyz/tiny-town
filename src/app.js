@@ -1,6 +1,7 @@
 import { town, indexTown } from "./data.js";
 import { buildingIdFromHash } from "./navigation.js";
 import { validateTown } from "./validate.js";
+import { historyMarkup } from "./history.js";
 
 const errors = validateTown(town);
 if (errors.length) throw new Error(`Invalid town data:\n${errors.join("\n")}`);
@@ -71,7 +72,7 @@ for (const building of town.buildings) {
 }
 
 document.querySelector("#notices").innerHTML = town.notices.map((notice) => `<article><div><span class="tag" aria-label="Town seed. This is a fictional example included with Tiny Town. It is not a real community post, proposal, event, or commitment.">Town seed</span></div><h3>${notice.title}</h3><p>${notice.body}</p>${notice.residentId ? `<p><small>Posted by ${index.residents.get(notice.residentId).name}, a fictional Tiny Town resident.</small></p>` : ""}${notice.sourceUrl ? `<a href="${notice.sourceUrl}">View the team-authored proposal ↗</a>` : ""}</article>`).join("");
-document.querySelector("#history").innerHTML = `<li><div><h3>No releases are recorded yet.</h3><p>When a version is published, its date, source link, and verified changes will appear here.</p></div></li>`;
+document.querySelector("#history").innerHTML = historyMarkup(town.history);
 
 document.querySelectorAll("[data-view]").forEach((control) => control.addEventListener("click", () => {
   activeView = control.dataset.view;

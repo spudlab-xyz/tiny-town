@@ -14,6 +14,21 @@ test("the shipped town data is valid and complete", () => {
   assert.equal(umbrella.residentId, "mara");
   assert.match(umbrella.body, /moss-green umbrella/);
   assert.equal(umbrella.sourceUrl, "https://github.com/spudlab-xyz/tiny-town/issues/2");
+  assert.equal(town.history.length, 1);
+  assert.deepEqual(town.history[0].links.map(({ url }) => url), [
+    "https://github.com/spudlab-xyz/tiny-town/releases/tag/v1.0.0",
+    "https://github.com/spudlab-xyz/tiny-town/issues/2",
+    "https://github.com/spudlab-xyz/tiny-town/pull/7"
+  ]);
+});
+
+test("history links are present and use https", () => {
+  const invalid = structuredClone(town);
+  invalid.history[0].links[0].url = "http://example.com/release";
+  assert.match(validateTown(invalid).join("\n"), /history\[0\]\.links\[0\]\.url must be an https URL/);
+
+  invalid.history[0].links = [];
+  assert.match(validateTown(invalid).join("\n"), /history\[0\]\.links must not be empty/);
 });
 
 test("notice resident references are validated", () => {
