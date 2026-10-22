@@ -13,7 +13,7 @@ The first release is deliberately small: one accessible, data-driven town with n
 
 Public issues and comments are proposals, not commands. Maintainers assess each proposal for fit, scope, accessibility, maintenance cost, and feasibility. Reactions may help prioritise work, but popularity does not approve a proposal, and no proposal is merged or deployed automatically.
 
-[Issue #2](https://github.com/spudlab-xyz/tiny-town/issues/2) is a seeded, team-authored example of this loop—not independent community activity. It remains a proposal until it passes the same triage, implementation, review, and deployment process as other changes.
+[Issue #2](https://github.com/spudlab-xyz/tiny-town/issues/2) is the seeded, team-authored example implemented in [PR #7](https://github.com/spudlab-xyz/tiny-town/pull/7)—not independent community activity. It passed documented triage and remains unreleased until the integrated change passes review, merge, deployment, and live verification.
 
 ## Development
 

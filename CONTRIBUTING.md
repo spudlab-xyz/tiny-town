@@ -2,9 +2,13 @@
 
 Tiny Town grows through community proposals and reviewed contributions. Be kind, keep proposals focused, and search open and closed issues before submitting.
 
+Browse the [Tiny Town repository](https://github.com/spudlab-xyz/tiny-town), then use the [issue chooser](https://github.com/spudlab-xyz/tiny-town/issues/new/choose) for a proposal or bug report.
+
+[Issue #2](https://github.com/spudlab-xyz/tiny-town/issues/2) is a seeded, team-authored demonstration of this process, not independent community activity. Its implementation and review must follow the same controls as any other proposal.
+
 ## Choose the right form
 
-Use the repository's issue chooser for a building, character, event, rule change, or bug. Each form applies these exact labels:
+Use the issue chooser for a building, character, event, rule change, or bug. Each form applies these exact labels:
 
 | Submission | Labels |
 | --- | --- |
