@@ -38,6 +38,13 @@ async function resolves(target) {
   return false;
 }
 
+async function validateTarget(raw, fromFile) {
+  const target = localTarget(raw, fromFile);
+  if (target && !await resolves(target)) {
+    errors.push(`${path.relative(root, fromFile)}: ${raw} does not resolve`);
+  }
+}
+
 const files = await walk(root);
 if (!files.some((file) => path.relative(root, file) === 'index.html')) {
   errors.push('Site output does not contain index.html.');
@@ -49,12 +56,15 @@ for (const file of files) {
     try { JSON.parse(await readFile(file, 'utf8')); }
     catch (error) { errors.push(`${relative}: invalid JSON (${error.message})`); }
   }
-  if (!file.endsWith('.html')) continue;
-  const html = await readFile(file, 'utf8');
-  const attributes = html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi);
-  for (const [, raw] of attributes) {
-    const target = localTarget(raw, file);
-    if (target && !await resolves(target)) errors.push(`${relative}: ${raw} does not resolve`);
+  if (file.endsWith('.html')) {
+    const html = await readFile(file, 'utf8');
+    const attributes = html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi);
+    for (const [, raw] of attributes) await validateTarget(raw, file);
+  }
+  if (file.endsWith('.js') || file.endsWith('.mjs')) {
+    const javascript = await readFile(file, 'utf8');
+    const imports = javascript.matchAll(/\b(?:import|export)\s+(?:[^"']*?\s+from\s+)?["']([^"']+)["']/g);
+    for (const [, raw] of imports) await validateTarget(raw, file);
   }
 }
 
@@ -62,4 +72,4 @@ if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join('\n'));
   process.exit(1);
 }
-console.log(`Validated ${files.length} files: JSON syntax, internal links, and ${base} base-path compatibility.`);
+console.log(`Validated ${files.length} files: JSON syntax, internal links and module imports, and ${base} base-path compatibility.`);
