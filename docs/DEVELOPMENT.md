@@ -56,6 +56,14 @@ For user-facing changes, also check:
 
 Record what you checked and any known limitation in the pull request. Do not claim accessibility conformance without evidence.
 
+## CI and deployment checks
+
+The **CI** workflow runs the `validate` job for pull requests and pushes to `main`. In addition to the project's declared validation and tests, it prepares `_site` and checks JSON syntax, local `href` and `src` targets, and `/tiny-town/` base-path compatibility. External URLs are intentionally not fetched: remote availability is nondeterministic, and untrusted pull-request content must not make the runner contact arbitrary hosts. Check important external links manually.
+
+The site-preparation step recognises `dist/`, `build/`, or `public/` output, or a dependency-free site with a root `index.html`. A future toolchain must continue to emit one of those layouts or update the preparation script and [platform guide](platform.md) in the same change.
+
+After a change reaches `main`, **Deploy GitHub Pages** runs `build` and then `deploy`, publishing a freshly built artifact to <https://spudlab-xyz.github.io/tiny-town/>. See [platform and deployment](platform.md) for workflow and permission details.
+
 ## Keep changes focused
 
 - Start from an issue for substantial work and agree the scope before implementation.

@@ -36,7 +36,7 @@ Open <http://localhost:4173/>. The production build is written to `dist/` with r
 
 Buildings, residents, notices, and history are version-controlled town data rather than page markup. The [town content guide](docs/TOWN_DATA.md) explains the data conventions, reference rules, seeded-content labels, and the routine steps for each content type.
 
-Today, the town changes only when a pull request is reviewed, merged, and deployed. The [evolution guide](docs/EVOLUTION.md) documents that process, practical rollback, and a possible future deterministic scheduled simulation. The simulation is a design direction only; it is not part of the current site.
+Today, the town changes only when a pull request is reviewed, merged, and deployed. The [evolution guide](docs/EVOLUTION.md) documents that process, practical rollback, and a possible future deterministic scheduled simulation. The [platform guide](docs/platform.md) records the exact CI and GitHub Pages workflow. The simulation is a design direction only; it is not part of the current site.
 
 ## Assets and attribution
 

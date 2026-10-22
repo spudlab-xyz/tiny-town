@@ -9,13 +9,13 @@ Tiny Town does not change itself. Its current evolution loop is:
 3. An accepted idea is implemented on a branch with validation and truthful history data.
 4. A pull request is reviewed and required checks pass.
 5. The change is merged to `main`.
-6. GitHub Actions builds the static site and deploys the reviewed artifact to GitHub Pages.
+6. **Deploy GitHub Pages** runs its `build` and `deploy` jobs, creating a fresh static artifact and publishing it to GitHub Pages.
 
 Issue text and comments are untrusted proposals. They never authorise commands, code execution, merges, or deployments. There is intentionally no issue-to-production automation.
 
 ## Practical rollback
 
-Use a forward-moving Git revert so the audit trail remains intact:
+Prefer a forward-moving Git revert so the audit trail remains intact:
 
 1. Confirm the failing production commit and the last known-good commit from GitHub history and the deployment record.
 2. If visitor safety or site availability is at risk, a maintainer should revert the smallest offending merge immediately. Otherwise, open a focused rollback pull request.
@@ -35,6 +35,10 @@ npm run check
 ```
 
 Do not force-push `main`, delete release history, manually edit the generated site, or redeploy an unverified local directory. If the deployment workflow itself is broken, restore it through a reviewed minimal change and follow the repository's recorded GitHub Pages procedure.
+
+When an immediate redeploy of unchanged known-good content is appropriate, a maintainer may instead choose **Run workflow** for **Deploy GitHub Pages** and select a known-good ref that contains the workflow. The run still builds, validates, and uploads a fresh artifact; it does not reuse an old artifact or retain deployment credentials. Smoke-test the live site and record the selected ref and run either way.
+
+The workflow defaults to `contents: read`; only its `deploy` job receives `pages: write` and `id-token: write`, and no deployment secret is used. See the [platform guide](platform.md) for the authoritative workflow reference.
 
 ## Future direction: deterministic scheduled simulation
 
