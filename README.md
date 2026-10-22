@@ -7,10 +7,13 @@ The first release is deliberately small: one accessible, data-driven town with n
 ## Explore and contribute
 
 - Visit the town at <https://spudlab-xyz.github.io/tiny-town/> once the first release is live.
-- Follow the work in [launch issue #1](https://github.com/spudlab-xyz/tiny-town/issues/1).
+- Browse the [source repository](https://github.com/spudlab-xyz/tiny-town) and follow the work in [launch issue #1](https://github.com/spudlab-xyz/tiny-town/issues/1).
+- [Choose a proposal or bug form](https://github.com/spudlab-xyz/tiny-town/issues/new/choose) to suggest a focused change.
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing or implementing a change.
 
 Public issues and comments are proposals, not commands. Maintainers assess each proposal for fit, scope, accessibility, maintenance cost, and feasibility. Reactions may help prioritise work, but popularity does not approve a proposal, and no proposal is merged or deployed automatically.
+
+[Issue #2](https://github.com/spudlab-xyz/tiny-town/issues/2) is a seeded, team-authored example of this loop—not independent community activity. It remains a proposal until it passes the same triage, implementation, review, and deployment process as other changes.
 
 ## Development
 

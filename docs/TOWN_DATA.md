@@ -15,6 +15,8 @@ Tiny Town renders buildings, residents, notices, and history from version-contro
 
 All four collections currently live in `src/data.js`; `src/validate.js` defines their validation rules. Those files and `npm run validate` are authoritative for exact fields and allowed values. Follow existing records as examples, but do not copy an accidental inconsistency.
 
+The repository's [team-authored issue #2](https://github.com/spudlab-xyz/tiny-town/issues/2) demonstrates the proposal path. It is explicitly seeded and is not evidence of independent community activity. If implemented, its notice must retain the data model's `seeded: true` marker and truthful public labelling.
+
 ## Add a building
 
 1. Open a building proposal and agree its scope before implementation.
