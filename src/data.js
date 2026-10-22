@@ -14,5 +14,6 @@ residents:[
 notices:[
 {id:"stool-audit",title:"Stool audit",date:"2026-10-22",seeded:true,body:"The Square has seven stools and eight opinions about where they belong. Mara requests one measuring tape."},
 {id:"hinges",title:"Hinges wanted",date:"2026-10-22",seeded:true,body:"Patchwork Works needs two quiet hinges. Squeaky hinges may submit a compelling explanation."},
-{id:"open-plot",title:"Open plot",date:"2026-10-22",seeded:true,body:"The plot east of the garden has no assigned use. Explore first, then propose what would make the map more useful or delightful."}],history:[]};
+{id:"open-plot",title:"Open plot",date:"2026-10-22",seeded:true,body:"The plot east of the garden has no assigned use. Explore first, then propose what would make the map more useful or delightful."},
+{id:"lost-umbrella",title:"Lost: one extremely patient umbrella",date:"2026-10-22",seeded:true,residentId:"mara",body:"Please return the moss-green umbrella last seen waiting outside the bakery. — Mara Venn",sourceUrl:"https://github.com/spudlab-xyz/tiny-town/issues/2"}],history:[]};
 export function indexTown(data=town){return{residents:new Map(data.residents.map(r=>[r.id,r])),buildings:new Map(data.buildings.map(b=>[b.id,b]))};}

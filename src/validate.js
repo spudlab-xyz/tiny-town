@@ -28,6 +28,8 @@ export function validateTown(data) {
     requiredStrings(notice, ["id", "title", "date", "body"], path, errors);
     addId(notice.id, path);
     if (typeof notice.seeded !== "boolean") errors.push(`${path}.seeded must be a boolean`);
+    if (notice.residentId !== undefined && !residentIds.has(notice.residentId)) errors.push(`${path} references unknown resident ${notice.residentId}`);
+    if (notice.sourceUrl !== undefined && (typeof notice.sourceUrl !== "string" || !notice.sourceUrl.startsWith("https://"))) errors.push(`${path}.sourceUrl must be an https URL`);
   });
   data.history.forEach((entry, index) => requiredStrings(entry, ["version", "date", "title", "summary"], `history[${index}]`, errors));
   return errors;
