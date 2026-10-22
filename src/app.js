@@ -13,6 +13,35 @@ const detail = document.querySelector("#place-detail");
 const announcement = document.querySelector("#announcement");
 let activeView = "map";
 
+const themeSelect = document.querySelector("#theme-select");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+
+function storedTheme() {
+  try { return localStorage.getItem("tiny-town-theme") ?? "system"; }
+  catch { return "system"; }
+}
+
+function applyTheme(theme) {
+  if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+  else delete document.documentElement.dataset.theme;
+  const effectiveDark = theme === "dark" || (theme === "system" && systemTheme.matches);
+  themeColor.content = effectiveDark ? "#142219" : "#f7f6ef";
+}
+
+themeSelect.value = storedTheme();
+applyTheme(themeSelect.value);
+themeSelect.addEventListener("change", () => {
+  try {
+    if (themeSelect.value === "system") localStorage.removeItem("tiny-town-theme");
+    else localStorage.setItem("tiny-town-theme", themeSelect.value);
+  } catch {}
+  applyTheme(themeSelect.value);
+});
+systemTheme.addEventListener("change", () => {
+  if (themeSelect.value === "system") applyTheme("system");
+});
+
 const residentMarkup = (id) => {
   const resident = index.residents.get(id);
   return `<div class="resident"><span class="avatar" aria-hidden="true">${resident.avatar}</span><div><strong>${resident.name}</strong><small>${resident.role} · ${resident.pronouns}</small><p>${resident.bio}</p></div></div>`;

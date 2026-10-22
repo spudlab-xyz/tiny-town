@@ -21,6 +21,8 @@ The initial repository does not yet list third-party media assets. Add one row f
 
 | Asset and path | Creator | Source | Licence | Notes |
 | --- | --- | --- | --- | --- |
-| _No separately attributed assets recorded yet._ |  |  |  | Replace this row when applicable. |
+| Spudlab wordmark, favicon, app icons, and semantic tokens under `public/` | Spudlab | Private `spudlab-xyz/brand-assets` v1.0.0; provenance and hashes in `BRAND-SOURCE.md` | Spudlab brand rights; not MIT | Approved, version-pinned copies for this official project. Not licensed under Tiny Town's MIT software licence. |
 
 Source code licensing and asset licensing are separate. A repository code licence does not automatically grant rights to third-party media, and an asset licence does not change the code licence.
+
+Spudlab brand assets are approved, version-pinned copies used by this official project. They are not licensed under Tiny Town's MIT software licence. See `BRAND-SOURCE.md` for provenance and checksums.

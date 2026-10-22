@@ -1,0 +1,14 @@
+{
+  "name": "Tiny Town",
+  "short_name": "Tiny Town",
+  "description": "A small illustrated town that grows through community proposals and reviewed contributions.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6ef",
+  "theme_color": "#24533c",
+  "icons": [
+    { "src": "./public/icons/spudlab-app-light-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./public/icons/spudlab-app-light-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
