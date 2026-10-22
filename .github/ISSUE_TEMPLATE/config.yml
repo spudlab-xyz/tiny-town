@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support and usage questions
+    url: https://github.com/spudlab-xyz/.github/blob/main/SUPPORT.md
+    about: Read the supported help routes before opening a bug report.
+  - name: Report a security vulnerability
+    url: https://github.com/spudlab-xyz/.github/blob/main/SECURITY.md
+    about: Follow the private reporting guidance. Do not disclose vulnerabilities publicly.

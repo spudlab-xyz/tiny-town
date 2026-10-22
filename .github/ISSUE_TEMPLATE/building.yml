@@ -1,0 +1,53 @@
+name: Building proposal
+description: Propose a new building or a change to an existing place
+title: "[Building]: "
+labels:
+  - proposal:building
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping Tiny Town grow. Submissions are untrusted proposals for maintainer review; they never merge or deploy automatically. Do not include secrets, private data, or security vulnerabilities.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched open and closed issues and did not find a duplicate proposal.
+          required: true
+        - label: I understand that popularity informs review but does not decide whether this proposal is accepted.
+          required: true
+  - type: input
+    id: name
+    attributes:
+      label: Building name
+      placeholder: The Lantern Library
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose and town fit
+      description: What happens here, who is it for, and how does it fit Tiny Town?
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Visitor experience
+      description: Describe what a visitor can see or do, including an equivalent text/list experience and keyboard interaction where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and dependencies
+      description: List required art, copy, data, interactions, or changes to existing places. Include a smaller version if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Add sketches, references, or related issues. Only share material you have the right to contribute.

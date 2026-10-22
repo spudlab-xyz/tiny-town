@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a reproducible problem with Tiny Town
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Reports are untrusted input for maintainer review; they never trigger an automatic merge or deployment. Do not disclose security vulnerabilities, secrets, or private data here.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched open and closed issues and did not find a duplicate report.
+          required: true
+        - label: This report does not contain a security vulnerability or sensitive information.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed result and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Select …
+        3. Observe …
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the page URL, device, operating system, browser and version, and relevant accessibility technology. Write "Not applicable" where appropriate.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Minor inconvenience
+        - A feature is difficult or impossible to use
+        - The site or a core journey is unusable
+        - Accessibility barrier
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional evidence
+      description: Add minimal screenshots, recordings, console output, or links after removing personal and sensitive information.

@@ -1,0 +1,55 @@
+name: Event proposal
+description: Propose a town event, celebration, or temporary activity
+title: "[Event]: "
+labels:
+  - proposal:event
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an event. Submissions are untrusted proposals for maintainer review; they never merge or deploy automatically. Do not include secrets, private data, or security vulnerabilities.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched open and closed issues and did not find a duplicate proposal.
+          required: true
+        - label: I understand that popularity informs review but does not decide whether this proposal is accepted.
+          required: true
+  - type: input
+    id: name
+    attributes:
+      label: Event name
+      placeholder: Starlight Seed Swap
+    validations:
+      required: true
+  - type: textarea
+    id: concept
+    attributes:
+      label: Concept and town fit
+      description: What happens, who participates, and why does it belong in Tiny Town?
+    validations:
+      required: true
+  - type: textarea
+    id: timing
+    attributes:
+      label: Timing and lifecycle
+      description: Is it permanent, recurring, seasonal, or tied to a date? Explain how outdated event content should be handled.
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Visitor experience and accessibility
+      description: Describe the visual and equivalent text/list experience, keyboard interaction, motion, sound, or time-limit considerations.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and dependencies
+      description: List required art, copy, data, interactions, or ongoing maintenance. Include a smaller version if possible.
+    validations:
+      required: true

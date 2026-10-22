@@ -1,0 +1,48 @@
+name: Rule change proposal
+description: Propose a change to Tiny Town's community or project rules
+title: "[Rule]: "
+labels:
+  - proposal:rule
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Rules need careful, transparent review. Submissions are untrusted proposals; they never change policy, merge, or deploy automatically. Maintainers remain responsible for decisions. Do not include private reports or security vulnerabilities.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched open and closed issues and did not find a duplicate proposal.
+          required: true
+        - label: I understand that popularity informs review but does not decide whether this proposal is accepted.
+          required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current rule or gap
+      description: Quote or link to the current rule, or explain the missing guidance.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed wording
+      description: Provide the exact new or revised wording.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and affected people
+      description: What problem does this solve, who is affected, and what trade-offs or unintended effects should reviewers consider?
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation and maintenance
+      description: Note documentation, moderation, accessibility, migration, enforcement, or ongoing maintenance needs.
+    validations:
+      required: true
