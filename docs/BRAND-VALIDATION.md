@@ -7,19 +7,21 @@ Engineering preflight for issue #9. Independent Review & QA must repeat the inte
 - `npm run check`: five buildings and five residents validated; 19 tests passed; production build passed.
 - `scripts/validate-brand.mjs`: six pinned files match v1.0.0 SHA-256 values; manifest identity and relative paths pass; production source has no private-repository, credential, or API dependency markers.
 - `scripts/validate-site.mjs dist`: production JSON, local assets, module imports, and `/tiny-town/` base-path compatibility pass.
-- Contrast calculation using WCAG relative luminance: noticeboard ink/orange 5.25:1; footer cream/ink 14.23:1; light primary pair 8.15:1; dark primary pair 11.08:1; accent tag pair 9.54:1. Existing map label-pair tests remain green.
+- Contrast calculation using WCAG relative luminance: the final `.noticeboard .eyebrow` cascade resolves to Ink/orange in both themes at 5.25:1; footer cream/ink 14.23:1; light primary pair 8.15:1; dark primary pair 11.08:1; accent tag pair 9.54:1. A regression test verifies both rule order and the final pair. Existing map label-pair tests remain green.
 
 ## Engineering inspection matrix
 
 | Surface | Light, wide | Dark, wide | Light, 320 CSS px | Dark, 320 CSS px |
 | --- | --- | --- | --- | --- |
-| Map | semantic page/control chrome; local scene colours | semantic dark chrome; local scene unchanged | 16px gutter, clamped 44px+ controls, directory available | same dark-role behavior |
+| Map | semantic page/control chrome; local scene colours | semantic dark chrome; local scene unchanged | 16px gutter; place controls switch from absolute coordinates to a one-column in-flow grid with no overlap; directory remains available | same dark-role behavior |
 | Directory and detail | surface/text/border roles; sticky detail | dark surface/text/border roles | single column; static detail after exploration | same dark-role behavior |
 | Noticeboard | ink on orange; semantic article surfaces | ink on orange; dark semantic articles | single-column articles | same dark-role behavior |
 | History | semantic page, link, text, border roles | dark semantic roles | one-column entries at 360px and below | same dark-role behavior |
 | Footer | dark semantic surface; reverse wordmark | same approved dark footer treatment | wrapped centered rows; 112px wordmark retained | same approved treatment |
 
 The DOM order preserves header, main landmarks, map/directory, detail, noticeboard, history, invitation, and footer. The three-option native theme control is labelled, has a 44px minimum target, stores only explicit choices, and follows system preference otherwise. The pre-paint script applies an explicit choice before styles load. Reduced-motion tokens and existing hover suppression remain active; forced-colour rules preserve borders, focus, selected outlines, native select behavior, and endorsement contrast.
+
+At 360 CSS px and below, decorative map scenery is removed and the five map controls become a one-column, in-flow grid. This preserves the illustrated controls, names, icons, selection semantics, fragments, and directory parity without coordinate overlap or two-dimensional scrolling.
 
 Missing endorsement artwork retains the visible `by` text and the image alternative `Spudlab`. Missing scenery does not remove generated place names or the directory. With JavaScript disabled, the project framing, copy, theme default, footer, and endorsement remain readable; the existing script-generated exploration content remains subject to the repository's established fallback contract.
 

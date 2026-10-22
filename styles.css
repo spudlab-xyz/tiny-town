@@ -17,6 +17,7 @@ a{color:var(--sp-color-link)}
 .eyebrow,.history li>span{color:var(--sp-color-link)}
 .explore,.history{background:var(--sp-color-background)}
 .noticeboard{color:var(--sp-brand-ink)}
+.noticeboard .eyebrow{color:var(--sp-brand-ink)}
 .tag{background:var(--sp-color-accent);color:var(--sp-color-on-accent)}
 .view-switch,.location-card,#place-detail{background:var(--sp-color-surface);border-color:var(--sp-color-border);color:var(--sp-color-text)}
 .view-switch button{min-height:var(--sp-layout-minimumTarget)}
@@ -34,5 +35,5 @@ footer{align-items:center;background:var(--sp-brand-ink);color:var(--sp-brand-cr
 @media(prefers-color-scheme:dark){:root:not([data-theme]) .hero{background:radial-gradient(circle at 78% 44%,#805300 0 105px,transparent 106px),linear-gradient(155deg,var(--sp-color-background),var(--sp-color-surface-raised))}:root:not([data-theme]) .notice-grid article{background:var(--sp-color-surface);color:var(--sp-color-text)}}
 
 @media(max-width:760px){.site-header{align-items:flex-start;flex-direction:column;gap:var(--sp-space-3);padding-block:var(--sp-space-4)}nav{width:100%;flex-wrap:wrap;gap:var(--sp-space-2) var(--sp-space-4)}nav>a:not(.button){display:inline-flex;min-height:var(--sp-layout-minimumTarget);align-items:center}.theme-picker{order:2}.button.small{order:3}.hero h1 br{display:none}footer{align-items:center}.endorsement{width:100%;order:2}}
-@media(max-width:360px){.hero,.explore,.noticeboard,.history{padding-inline:1rem}.view-switch{display:flex;width:100%}.view-switch button{flex:1}.history li{grid-template-columns:1fr;gap:.4rem}.history time{grid-column:1}.town-map{height:620px}.map-place{font-size:.9rem}}
+@media(max-width:360px){.hero,.explore,.noticeboard,.history{padding-inline:1rem}.view-switch{display:flex;width:100%}.view-switch button{flex:1}.history li{grid-template-columns:1fr;gap:.4rem}.history time{grid-column:1}.town-map{height:auto;min-height:0;display:grid;grid-template-columns:1fr;gap:1rem;padding:1rem;border-radius:var(--sp-radius-large)}.town-map>.river,.town-map>.road,.town-map>.tree,.town-map>.pond{display:none}.town-map>.map-place{position:relative;left:auto;top:auto;width:100%;min-height:var(--sp-layout-minimumTarget);transform:none;font-size:.9rem}.town-map>.map-place:hover{transform:none}}
 @media(forced-colors:active){.town-map,.map-place,.location-card,.notice-grid article,#place-detail,.tag{forced-color-adjust:auto;border:2px solid CanvasText}.selected{outline:5px double Highlight}.river,.road,.pond,.tree{forced-color-adjust:none}.button{border:2px solid ButtonText}.endorsement img{background:CanvasText}}
