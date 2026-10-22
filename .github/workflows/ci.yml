@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        if: ${{ hashFiles('package-lock.json') != '' }}
+        run: npm ci --ignore-scripts
+
+      - name: Validate data and run tests
+        if: ${{ hashFiles('package.json') != '' }}
+        run: npm run validate --if-present && npm test --if-present
+
+      - name: Build and validate site
+        if: ${{ hashFiles('package.json', 'index.html', 'public/index.html') != '' }}
+        env:
+          SITE_BASE_PATH: /tiny-town/
+        run: node scripts/prepare-site.mjs && node scripts/validate-site.mjs _site
