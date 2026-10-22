@@ -42,6 +42,10 @@ Today, the town changes only when a pull request is reviewed, merged, and deploy
 
 See [asset guidance and credits](docs/ASSETS.md). Do not add an asset unless its source and reuse terms are known and recorded.
 
+## License
+
+Tiny Town's source code is available under the [MIT License](LICENSE). Media assets remain subject to the separate attribution and reuse terms recorded in [docs/ASSETS.md](docs/ASSETS.md).
+
 ## Community and project policies
 
 Repository-specific guidance takes precedence. Spudlab's organisation-wide [contribution guide](https://github.com/spudlab-xyz/.github/blob/main/CONTRIBUTING.md), [Code of Conduct](https://github.com/spudlab-xyz/.github/blob/main/CODE_OF_CONDUCT.md), [security policy](https://github.com/spudlab-xyz/.github/blob/main/SECURITY.md), and [support guidance](https://github.com/spudlab-xyz/.github/blob/main/SUPPORT.md) also apply.

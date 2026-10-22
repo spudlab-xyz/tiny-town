@@ -1,8 +1,8 @@
 # Tiny Town accessible exploration specification
 
-Status: implementation-ready for v1  
-Owner: Spud Labs Design Lead — UI/UX  
-Coordinates with: Engineering and Review & QA  
+Status: implementation-ready for v1
+Owner: Spud Labs Design Lead — UI/UX
+Coordinates with: Engineering and Review & QA
 
 ## Experience outcome
 
