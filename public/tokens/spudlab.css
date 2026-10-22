@@ -1,0 +1,130 @@
+/* Spudlab 1.0.0 — generated from tokens.json; change the JSON first. */
+:root {
+  --sp-brand-ink: #18281F;
+  --sp-brand-forest: #24533C;
+  --sp-brand-lime: #C1E879;
+  --sp-brand-cream: #F7F6EF;
+  --sp-brand-spud: #D5A56A;
+  --sp-brand-spudShade: #B2824C;
+  --sp-brand-white: #FFFFFF;
+  --sp-space-0: 0;
+  --sp-space-1: 4px;
+  --sp-space-2: 8px;
+  --sp-space-3: 12px;
+  --sp-space-4: 16px;
+  --sp-space-5: 20px;
+  --sp-space-6: 24px;
+  --sp-space-8: 32px;
+  --sp-space-10: 40px;
+  --sp-space-12: 48px;
+  --sp-space-16: 64px;
+  --sp-space-20: 80px;
+  --sp-space-24: 96px;
+  --sp-radius-small: 6px;
+  --sp-radius-control: 8px;
+  --sp-radius-card: 12px;
+  --sp-radius-large: 20px;
+  --sp-radius-pill: 999px;
+  --sp-motion-fast: 120ms;
+  --sp-motion-normal: 180ms;
+  --sp-motion-slow: 240ms;
+  --sp-motion-easing: cubic-bezier(0.2, 0, 0, 1);
+  --sp-breakpoints-small: 640px;
+  --sp-breakpoints-medium: 768px;
+  --sp-breakpoints-large: 1024px;
+  --sp-breakpoints-wide: 1280px;
+  --sp-layout-marketingMax: 1200px;
+  --sp-layout-readingMax: 720px;
+  --sp-layout-appMax: 1440px;
+  --sp-layout-minimumTarget: 44px;
+  --sp-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sp-font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --sp-text-caption: 12px;
+  --sp-text-small: 14px;
+  --sp-text-body: 16px;
+  --sp-text-lead: 20px;
+  --sp-text-h3: 24px;
+  --sp-text-h2: 32px;
+  --sp-text-h1: 48px;
+  --sp-text-display: 64px;
+  --sp-weight-regular: 400;
+  --sp-weight-medium: 500;
+  --sp-weight-semibold: 600;
+  --sp-weight-bold: 700;
+  --sp-leading-body: 1.5;
+  --sp-leading-heading: 1.15;
+}
+:root, [data-theme="light"] {
+  --sp-color-background: #F7F6EF;
+  --sp-color-surface: #FFFFFF;
+  --sp-color-surface-raised: #EEEEE5;
+  --sp-color-text: #18281F;
+  --sp-color-text-muted: #526458;
+  --sp-color-border: #748478;
+  --sp-color-border-subtle: #D7DED6;
+  --sp-color-primary: #24533C;
+  --sp-color-on-primary: #F7F6EF;
+  --sp-color-accent: #C1E879;
+  --sp-color-on-accent: #18281F;
+  --sp-color-link: #246044;
+  --sp-color-focus: #246A91;
+  --sp-color-success: #24533C;
+  --sp-color-warning: #805300;
+  --sp-color-danger: #AA3030;
+  --sp-color-chart-1: #246A91;
+  --sp-color-chart-2: #24533C;
+  --sp-color-chart-3: #805300;
+  --sp-color-chart-4: #84529A;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+  --sp-color-background: #142219;
+  --sp-color-surface: #203329;
+  --sp-color-surface-raised: #2A4032;
+  --sp-color-text: #F7F6EF;
+  --sp-color-text-muted: #BCD0C0;
+  --sp-color-border: #82968A;
+  --sp-color-border-subtle: #3B5544;
+  --sp-color-primary: #C1E879;
+  --sp-color-on-primary: #18281F;
+  --sp-color-accent: #24533C;
+  --sp-color-on-accent: #F7F6EF;
+  --sp-color-link: #C1E879;
+  --sp-color-focus: #81C8F2;
+  --sp-color-success: #A8D89E;
+  --sp-color-warning: #F0C77C;
+  --sp-color-danger: #FFB3AC;
+  --sp-color-chart-1: #81C8F2;
+  --sp-color-chart-2: #A8D89E;
+  --sp-color-chart-3: #F0C77C;
+  --sp-color-chart-4: #D3B0EE;
+  color-scheme: dark;
+  }
+}
+[data-theme="dark"] {
+  --sp-color-background: #142219;
+  --sp-color-surface: #203329;
+  --sp-color-surface-raised: #2A4032;
+  --sp-color-text: #F7F6EF;
+  --sp-color-text-muted: #BCD0C0;
+  --sp-color-border: #82968A;
+  --sp-color-border-subtle: #3B5544;
+  --sp-color-primary: #C1E879;
+  --sp-color-on-primary: #18281F;
+  --sp-color-accent: #24533C;
+  --sp-color-on-accent: #F7F6EF;
+  --sp-color-link: #C1E879;
+  --sp-color-focus: #81C8F2;
+  --sp-color-success: #A8D89E;
+  --sp-color-warning: #F0C77C;
+  --sp-color-danger: #FFB3AC;
+  --sp-color-chart-1: #81C8F2;
+  --sp-color-chart-2: #A8D89E;
+  --sp-color-chart-3: #F0C77C;
+  --sp-color-chart-4: #D3B0EE;
+  color-scheme: dark;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --sp-motion-fast: 0ms; --sp-motion-normal: 0ms; --sp-motion-slow: 0ms; }
+}
