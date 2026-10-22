@@ -17,7 +17,7 @@ export function validateTown(data) {
   const residentIds = new Set(data.residents.map(({ id }) => id));
   data.buildings.forEach((building, index) => {
     const path = `buildings[${index}]`;
-    requiredStrings(building, ["id", "name", "icon", "color", "description", "detail"], path, errors);
+    requiredStrings(building, ["id", "name", "icon", "color", "description", "purpose", "history", "detail"], path, errors);
     addId(building.id, path);
     if (![building.x, building.y].every((value) => Number.isFinite(value) && value >= 0 && value <= 100)) errors.push(`${path} coordinates must be from 0 to 100`);
     if (!Array.isArray(building.residentIds) || !building.residentIds.length) errors.push(`${path}.residentIds must not be empty`);
