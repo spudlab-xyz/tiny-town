@@ -23,11 +23,11 @@ Repository observations on 2026-10-22:
 
 - Actions are enabled, with default workflow permissions set to read-only.
 - Workflows cannot approve pull requests.
-- GitHub Pages is not yet enabled.
+- GitHub Pages is enabled with GitHub Actions as its build source; HTTPS is enforced.
 - `main` has no branch protection or repository ruleset.
 - No Actions environments are configured.
 
-An administrator must select **GitHub Actions** as the Pages build and deployment source before the first deployment can succeed. The first successful deployment creates or uses the `github-pages` environment. Consider protecting `main` with required CI and pull-request review once the check name has appeared; this task does not broaden repository administration settings.
+The first successful deployment creates or uses the `github-pages` environment. Consider protecting `main` with required CI and pull-request review once the check name has appeared; this task does not broaden repository administration settings.
 
 ## Rollback
 
